@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+
+#loginForm {
+  width: 50%;
+  height: 50%;
+  margin: 40px auto;
+}
+
+fieldset {
+  border: none;
+  /* padding: 0; */
+}
