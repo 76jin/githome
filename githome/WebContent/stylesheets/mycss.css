@@ -11,3 +11,9 @@ fieldset {
   border: none;
   /* padding: 0; */
 }
+
+#newUserForm {
+  width: 50%;
+  height: 50%;
+  margin: 40px auto;
+}
