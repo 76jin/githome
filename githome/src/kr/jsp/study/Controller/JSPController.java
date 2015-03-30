@@ -123,6 +123,9 @@ public class JSPController extends HttpServlet {
 	            viewUrl = "/user/add_fail.jsp";
 	        }
 	        break;
+	    case "/list.do":
+	        viewUrl = "/list.jsp";
+	        break;
 	    default:
 	        System.out.println("invalid command:" + command);
 	    }

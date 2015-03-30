@@ -9,7 +9,7 @@
 ## ==동작 순서==
 * 홈페이지 index.html
 	- 회원가입 버튼: /user/new.do
-		- JSPController -> [/usernew.jsp]()
+		- JSPController -> [/user/new.jsp]()
 	- 로그인 버튼: /githome/loginForm.do
 		- JSPController -> [/loginForm.jsp]()
 * 회원가입 폼 /user/new.jsp
@@ -22,6 +22,7 @@
 		-> /githome/loginForm.do
 * 로그인 폼 loginFrom.jsp
 	- 회원가입 버튼: /githome/user/new.do
-		- JSPController -> [/user/new.jsp]()
+		- JSPController -> [/login/success.jsp]()
 	- 로그인 버튼: /githome/login.do
+		- JSPController -> [login/fail.jsp]()
 * 그 다음 ...

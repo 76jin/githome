@@ -24,6 +24,16 @@
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+		<servlet-name>MessageDaoProviderInit</servlet-name>
+		<servlet-class>kr.jsp.study.dao.MessageDaoProviderInit</servlet-class>
+		<init-param>
+			<param-name>dbms</param-name>
+			<param-value>mysql</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+  </servlet>
+  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
