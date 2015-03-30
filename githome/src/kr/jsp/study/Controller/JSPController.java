@@ -34,7 +34,7 @@ public class JSPController extends HttpServlet {
     private void process(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
         // 파라미터 한글 인코딩 처리
-        request.setCharacterEncoding("UTF-8");
+//        request.setCharacterEncoding("UTF-8");
         
         UserDao dao;
         User user;
