@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import kr.jsp.study.board.service.ArticleNotFoundException;
+import kr.jsp.study.board.service.ReadArticleService;
+import kr.jsp.study.board.vo.Article;
 import kr.jsp.study.dao.UserDao;
 import kr.jsp.study.util.CookieBox;
 import kr.jsp.study.vo.User;
@@ -126,6 +129,31 @@ public class JSPController extends HttpServlet {
 	    case "/list.do":
 	        viewUrl = "/list.jsp";
 	        break;
+	    case "/board/list.do":
+	        System.out.println("==== called /board/list.do");
+	        viewUrl = "/board/list.jsp";
+	        break;
+	    case "/board/read.do":
+	        System.out.println("==== called /board/read.do");
+	        
+	        int articleId = Integer.parseInt(request.getParameter("articleId"));
+	        System.out.println("===== articleId:" + articleId);
+	        int page = Integer.parseInt(request.getParameter("p"));
+	        System.out.println("=== page:" + page);
+	        try {
+	            Article article = ReadArticleService.getInstance().readArticle(articleId);
+	            request.setAttribute("article", article);
+	            viewUrl = "/board/read_view.jsp?"
+	                    + "articleId=" + articleId
+	                    + "&p=" + page;
+	        } catch (ArticleNotFoundException ex) {
+	            viewUrl = "/board/article_not_found.jsp";
+	        }
+	        break;
+        case "/board/reply.do":
+            System.out.println("==== called /board/reply.do");
+            viewUrl = "/board/reply.jsp";
+            break;
 	    default:
 	        System.out.println("invalid command:" + command);
 	    }
